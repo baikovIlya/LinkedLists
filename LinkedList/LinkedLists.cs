@@ -165,6 +165,15 @@ namespace Lists
             }
         }
 
+        public void DeleteFirst()
+        {
+            if (Length < 1)
+            {
+                throw new Exception("there is nothing to delete here");
+            }
+            _root = _root.Next;
+        }
+
 
 
 

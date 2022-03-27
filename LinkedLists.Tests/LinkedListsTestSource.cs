@@ -52,5 +52,17 @@ namespace LinkedLists.Tests
         }
     }
 
+    public class DeleteFirstTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { new LinkedList(7), new LinkedList() };
+            yield return new object[] { new LinkedList(new int[] { 7, 8 }), new LinkedList(8) };
+            yield return new object[] { new LinkedList(new int[] { 7, 7, 8 }), new LinkedList(new int[] { 7, 8 }) };
+
+        }
+    }
+
+
 
 }

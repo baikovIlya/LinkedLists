@@ -48,5 +48,18 @@ namespace LinkedLists.Tests
             Assert.Throws<Exception>(() => list.DeleteLast());
         }
 
+        [TestCaseSource(typeof(DeleteFirstTestSource))]
+        public void DeleteFirstTest(LinkedList list, LinkedList expected_list)
+        {
+            list.DeleteFirst();
+            Assert.AreEqual(expected_list, list);
+        }
+
+        [TestCaseSource(typeof(EmptyListTestSource))]
+        public void DeleteFirstTest_WhenListIsEmpty_ShouldThrowException(LinkedList list)
+        {
+            Assert.Throws<Exception>(() => list.DeleteFirst());
+        }
+
     }
 }
