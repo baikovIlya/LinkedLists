@@ -220,6 +220,27 @@ namespace Lists
             }
         }
 
+        public void DeleteElementsAtBegin(int count)
+        {
+            if (Length < 1)
+            {
+                throw new Exception("There is nothing to delete here");
+            }
+            else if (count < 1 || count > Length)
+            {
+                throw new ArgumentException("Incorrect nomber");
+            }
+            else if (Length == count)
+            {
+                _root = null;
+                _tail = null;
+            }
+            else
+            {
+                Node new_first_node = GetNode(count);
+                _root = new_first_node;
+            }
+        }
 
 
 
