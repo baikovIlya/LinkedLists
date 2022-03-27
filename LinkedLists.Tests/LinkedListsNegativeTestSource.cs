@@ -57,5 +57,36 @@ namespace LinkedLists.Tests
         }
     }
 
+    public class DeleteElementsByIndexEmptyListTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { 1, 0, new LinkedList() };
+            yield return new object[] { 1, 1, new LinkedList() };
+            yield return new object[] { 0, 2, new LinkedList() };
+            yield return new object[] { 2, 2, new LinkedList() };
+        }
+    }
+    public class DeleteElementsByIndexWrongCountTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { -1, 0, new LinkedList(6) };
+            yield return new object[] { 2, 0, new LinkedList(6) };
+            yield return new object[] { 0, 0, new LinkedList(6) };
+            yield return new object[] { 3, 0, new LinkedList(new int[] { 5, 6 }) };
+        }
+    }
+    public class DeleteElementsByIndexWrongIndexTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { 1, -1, new LinkedList(6) };
+            yield return new object[] { 1, 1, new LinkedList(6) };
+            yield return new object[] { 2, 1, new LinkedList(new int[] { 6, 7 }) };
+            yield return new object[] { 2, -1, new LinkedList(new int[] { 5, 6 }) };
+        }
+    }
+
 
 }

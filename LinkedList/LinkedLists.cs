@@ -242,6 +242,37 @@ namespace Lists
             }
         }
 
+        public void DeleteElementsByIndex(int count, int index)
+        {
+            if (Length < 1)
+            {
+                throw new Exception("There is nothing to delete here");
+            }
+            else if (count < 1 || count > Length || (Length - index) < count)
+            {
+                throw new ArgumentException("Incorrect count");
+            }
+            if (index < 0 || index >= Length)
+            {
+                throw new ArgumentException("This index doesn't exist");
+            }
+            Node left = GetNode(index-1);
+            Node right = GetNode(index+count);
+            if (index == 0)
+            {
+                _root = right;
+            }
+            else
+            {
+                left.Next = right;
+            }
+            _tail = GetTail();
+        }
+
+
+
+
+
 
 
 
