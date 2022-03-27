@@ -73,7 +73,7 @@ namespace LinkedLists.Tests
             Assert.AreEqual(expected_list, list);
         }
 
-        [TestCaseSource(typeof(EmptyListWithIndexTestSource))]
+        [TestCaseSource(typeof(EmptyListWithIndexOrCountTestSource))]
         public void DeleteByIndexTest_WhenListIsEmpty_ShouldThrowException(int index, LinkedList list)
         {
             Assert.Throws<Exception>(() => list.DeleteByIndex(index));
@@ -84,5 +84,27 @@ namespace LinkedLists.Tests
         {
             Assert.Throws<ArgumentException>(() => list.DeleteByIndex(index));
         }
+
+
+        [TestCaseSource(typeof(DeleteElementsAtTheEndTestSource))]
+        public void DeleteElementsAtTheEndTest(int count, LinkedList list, LinkedList expected_list)
+        {
+            list.DeleteElementsAtTheEnd(count);
+            Assert.AreEqual(expected_list, list);
+        }
+
+        [TestCaseSource(typeof(EmptyListWithIndexOrCountTestSource))]
+        public void DeleteElementsAtTheEndTest_WhenListIsEmpty_ShouldThrowException(int count, LinkedList list)
+        {
+            Assert.Throws<Exception>(() => list.DeleteElementsAtTheEnd(count));
+        }
+
+        [TestCaseSource(typeof(WrongCountTestSource))]
+        public void DeleteElementsAtTheEndTest_WhenCountIsWrong_ShouldThrowArgumentException(int count, LinkedList list)
+        {
+            Assert.Throws<ArgumentException>(() => list.DeleteElementsAtTheEnd(count));
+        }
+
+
     }
 }

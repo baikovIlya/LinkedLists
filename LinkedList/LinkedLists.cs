@@ -197,6 +197,28 @@ namespace Lists
             _tail = GetTail();
         }
 
+        public void DeleteElementsAtTheEnd(int count)
+        {
+            if (Length <1)
+            {
+                throw new Exception("There is nothing to delete here");
+            }
+            else if (count < 1 || count > Length)
+            {
+                throw new ArgumentException("Incorrect nomber");
+            }
+            else if (Length == count)
+            {
+                _root = null;
+                _tail = null;
+            }
+            else 
+            {
+                Node new_last_node = GetNode(Length-count-1);
+                new_last_node.Next = null;
+                _tail = new_last_node;
+            }
+        }
 
 
 

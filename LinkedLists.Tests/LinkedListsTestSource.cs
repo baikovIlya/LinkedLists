@@ -76,6 +76,19 @@ namespace LinkedLists.Tests
         }
     }
 
+    public class DeleteElementsAtTheEndTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { 1, new LinkedList(5), new LinkedList() };
+            yield return new object[] { 1, new LinkedList(new int[] { 7, 5 }), new LinkedList(7) };
+            yield return new object[] { 2, new LinkedList(new int[] { 7, 5 }), new LinkedList() };
+            yield return new object[] { 2, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 2 }) };
+            yield return new object[] { 3, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList() };
+            yield return new object[] { 3, new LinkedList(new int[] { 2, 7, 9,6,8 }), new LinkedList(new int[] { 2, 7 }) };
+        }
+    }
+
 
 
 }
