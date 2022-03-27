@@ -174,6 +174,29 @@ namespace Lists
             _root = _root.Next;
         }
 
+        public void DeleteByIndex(int index)
+        {
+            if (_tail is null)
+            {
+                throw new Exception("There is nothing to delete here");
+            }
+            if (index < 0 || index >= Length)
+            {
+                throw new ArgumentException("This index doesn'n exist");
+            }
+            if (index == 0)
+            {
+                _root = _root.Next;
+            }
+            else
+            {
+                Node left_node = GetNode(index - 1);
+                Node right_node = GetNode(index + 1);
+                left_node.Next = right_node;
+            }
+            _tail = GetTail();
+        }
+
 
 
 
@@ -222,7 +245,16 @@ namespace Lists
         }
 
 
+        private Node GetTail()
+        {
+            Node crnt = _root;
+            for (int i = 1; i <= this.Length; i++)
+            {
+                crnt = crnt.Next;
+            }
+            return crnt;
 
+        }
         private Node GetNode(int index)
         {
             Node crnt = _root;

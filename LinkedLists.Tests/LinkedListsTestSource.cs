@@ -63,6 +63,19 @@ namespace LinkedLists.Tests
         }
     }
 
+    public class DeleteByIndexTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { 0, new LinkedList(new int[] { 7, 5 }), new LinkedList(5) };
+            yield return new object[] { 1, new LinkedList(new int[] { 7, 5 }), new LinkedList(new int[] { 7 }) };
+            yield return new object[] { 0, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 7, 9 }) };
+            yield return new object[] { 1, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 2, 9 }) };
+            yield return new object[] { 2, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 2, 7 }) };
+            yield return new object[] { 3, new LinkedList(new int[] { 0,8,2, 7, 9,8,0 }), new LinkedList(new int[] { 0,8,2, 9,8,0 }) };
+        }
+    }
+
 
 
 }
