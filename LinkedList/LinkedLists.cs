@@ -146,6 +146,25 @@ namespace Lists
             }
         }
 
+        public void DeleteLast()
+        {
+            if (Length < 1)
+            {
+                throw new Exception("there is nothing to delete here");
+            }
+            if (Length == 1)
+            {
+                _root = null;
+                _tail = null;
+            }
+            else
+            {
+                Node last_node = GetNode(Length - 2);
+                last_node.Next = null;
+                _tail = last_node;
+            }
+        }
+
 
 
 

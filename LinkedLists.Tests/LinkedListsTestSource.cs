@@ -41,5 +41,16 @@ namespace LinkedLists.Tests
             yield return new object[] { 9, 1, new LinkedList(new int[] { 7, 7 }), new LinkedList(new int[] { 7, 9, 7 }) };
         }
     }
+    public class DeleteLastTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { new LinkedList(7), new LinkedList() };
+            yield return new object[] { new LinkedList(new int[] { 7, 8 }), new LinkedList(7) };
+            yield return new object[] { new LinkedList(new int[] { 7, 7, 8 }), new LinkedList(new int[] { 7, 7 }) };
+
+        }
+    }
+
 
 }

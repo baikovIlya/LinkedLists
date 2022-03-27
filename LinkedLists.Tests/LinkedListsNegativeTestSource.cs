@@ -8,6 +8,14 @@ using Lists;
 
 namespace LinkedLists.Tests
 {
+    public class EmptyListTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { new LinkedList() };
+        }
+    }
+
     public class AddByIndexNegativeTestSource : IEnumerable
     {
         public IEnumerator GetEnumerator()

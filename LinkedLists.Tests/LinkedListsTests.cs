@@ -35,5 +35,18 @@ namespace LinkedLists.Tests
             Assert.Throws<ArgumentException>(() => list.AddByIndex(element, index));
         }
 
+        [TestCaseSource(typeof(DeleteLastTestSource))]
+        public void DeleteLastTest(LinkedList list, LinkedList expected_list)
+        {
+            list.DeleteLast();
+            Assert.AreEqual(expected_list, list);
+        }
+
+        [TestCaseSource(typeof(EmptyListTestSource))]
+        public void DeleteLastTest_WhenListIsEmpty_ShouldThrowException(LinkedList list)
+        {
+            Assert.Throws<Exception>(() => list.DeleteLast());
+        }
+
     }
 }
