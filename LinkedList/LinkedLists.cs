@@ -414,6 +414,40 @@ namespace Lists
             return index;
         }
 
+        public int DeleteAllByValue(int value)
+        {
+            if (Length < 1)
+            {
+                throw new Exception("There are no items to delete");
+            }
+            Node crnt = _root;
+            int index = 0;
+            int result = 0;
+            while (crnt != null)
+            {
+                if (crnt.Value == value)
+                {
+                    if (index == 0)
+                    {
+                        _root = crnt.Next;
+                        result++;
+                        index--;
+                    }
+                    else
+                    {
+                        Node previous = GetNode(index - 1);
+                        previous.Next = crnt.Next;
+                        result++;
+                        index--;
+                    }
+                }
+                index++;
+                crnt = crnt.Next;
+            }
+            _tail = GetTail();
+            return result;
+        }
+
 
 
 

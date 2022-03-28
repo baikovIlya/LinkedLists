@@ -233,6 +233,19 @@ namespace LinkedLists.Tests
             Assert.Throws<Exception>(() => list.DeleteFirstByValue(value));
         }
 
+        [TestCaseSource(typeof(DeleteAllByValueTestSource))]
+        public void DeleteAllByValueTest(int value, int expected_count, LinkedList list, LinkedList expected_list)
+        {
+            int actual_count = list.DeleteAllByValue(value);
+            Assert.AreEqual(expected_count, actual_count);
+            Assert.AreEqual(expected_list, list);
+        }
+
+        [TestCaseSource(typeof(EmptyListWithIndexOrCountTestSource))]
+        public void DeleteAllByValueTest_WhenListIsEmpty_ShouldThrowException(int value, LinkedList list)
+        {
+            Assert.Throws<Exception>(() => list.DeleteAllByValue(value));
+        }
 
 
 
