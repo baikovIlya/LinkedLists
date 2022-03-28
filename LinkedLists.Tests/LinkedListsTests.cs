@@ -219,6 +219,21 @@ namespace LinkedLists.Tests
         }
 
 
+        [TestCaseSource(typeof(DeleteByValueTestSource))]
+        public void DeleteByValueTest(int value, int expected_index, LinkedList list, LinkedList expected_list)
+        {
+            int actual_index = list.DeleteFirstByValue(value);
+            Assert.AreEqual(expected_index, actual_index);
+            Assert.AreEqual(expected_list, list);
+        }
+
+        [TestCaseSource(typeof(EmptyListWithIndexOrCountTestSource))]
+        public void DeleteByValueTest_WhenListIsEmpty_ShouldThrowException(int value, LinkedList list)
+        {
+            Assert.Throws<Exception>(() => list.DeleteFirstByValue(value));
+        }
+
+
 
 
 

@@ -12,10 +12,10 @@ namespace LinkedLists.Tests
     {
         public IEnumerator GetEnumerator()
         {
-            yield return new object[] {7, new LinkedList(), new LinkedList(7)};
-            yield return new object[] {7, new LinkedList(7), new LinkedList(new int[] { 7, 7 })};
-            yield return new object[] {8, new LinkedList(7), new LinkedList(new int[] { 7, 8 })};
-            yield return new object[] {7, new LinkedList(new int[] { 7, 7 }), new LinkedList(new int[] { 7, 7 , 7}) };
+            yield return new object[] { 7, new LinkedList(), new LinkedList(7) };
+            yield return new object[] { 7, new LinkedList(7), new LinkedList(new int[] { 7, 7 }) };
+            yield return new object[] { 8, new LinkedList(7), new LinkedList(new int[] { 7, 8 }) };
+            yield return new object[] { 7, new LinkedList(new int[] { 7, 7 }), new LinkedList(new int[] { 7, 7, 7 }) };
         }
     }
 
@@ -72,7 +72,7 @@ namespace LinkedLists.Tests
             yield return new object[] { 0, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 7, 9 }) };
             yield return new object[] { 1, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 2, 9 }) };
             yield return new object[] { 2, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 2, 7 }) };
-            yield return new object[] { 3, new LinkedList(new int[] { 0,8,2, 7, 9,8,0 }), new LinkedList(new int[] { 0,8,2, 9,8,0 }) };
+            yield return new object[] { 3, new LinkedList(new int[] { 0, 8, 2, 7, 9, 8, 0 }), new LinkedList(new int[] { 0, 8, 2, 9, 8, 0 }) };
         }
     }
 
@@ -85,7 +85,7 @@ namespace LinkedLists.Tests
             yield return new object[] { 2, new LinkedList(new int[] { 7, 5 }), new LinkedList() };
             yield return new object[] { 2, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 2 }) };
             yield return new object[] { 3, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList() };
-            yield return new object[] { 3, new LinkedList(new int[] { 2, 7, 9,6,8 }), new LinkedList(new int[] { 2, 7 }) };
+            yield return new object[] { 3, new LinkedList(new int[] { 2, 7, 9, 6, 8 }), new LinkedList(new int[] { 2, 7 }) };
         }
     }
 
@@ -99,7 +99,7 @@ namespace LinkedLists.Tests
             yield return new object[] { 2, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 9 }) };
             yield return new object[] { 3, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList() };
             yield return new object[] { 3, new LinkedList(new int[] { 2, 7, 9, 6, 8 }), new LinkedList(new int[] { 6, 8 }) };
-            yield return new object[] { 2, new LinkedList(new int[] { 2, 0, 0, 6, 8 }), new LinkedList(new int[] {0, 6, 8 }) };
+            yield return new object[] { 2, new LinkedList(new int[] { 2, 0, 0, 6, 8 }), new LinkedList(new int[] { 0, 6, 8 }) };
         }
     }
 
@@ -107,20 +107,20 @@ namespace LinkedLists.Tests
     {
         public IEnumerator GetEnumerator()
         {
-            yield return new object[] { 1,0, new LinkedList(5), new LinkedList() };
-            yield return new object[] { 1,0, new LinkedList(new int[] { 7, 5 }), new LinkedList(5) };
-            yield return new object[] { 1,1, new LinkedList(new int[] { 7, 5 }), new LinkedList(7) };
-            yield return new object[] { 2,0, new LinkedList(new int[] { 7, 5 }), new LinkedList() };
-            yield return new object[] { 1,0, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] {7, 9 }) };
-            yield return new object[] { 1,1, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] {2, 9 }) };
-            yield return new object[] { 1,2, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] {2, 7 }) };
-            yield return new object[] { 2,0, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 9 }) };
-            yield return new object[] { 2,1, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 2 }) };
-            yield return new object[] { 2,1, new LinkedList(new int[] { 2, 7, 9 , 6}), new LinkedList(new int[] { 2,6 }) };
-            yield return new object[] { 3,0, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList() };
-            yield return new object[] { 3,2, new LinkedList(new int[] { 2, 7, 9, 6, 8 }), new LinkedList(new int[] { 2, 7 }) };
-            yield return new object[] { 2,2, new LinkedList(new int[] { 2, 0, 0, 6, 8 }), new LinkedList(new int[] { 2, 0, 8 }) };
-            yield return new object[] { 2,1, new LinkedList(new int[] { 2, 0, 0, 6, 8 }), new LinkedList(new int[] { 2, 6, 8 }) };
+            yield return new object[] { 1, 0, new LinkedList(5), new LinkedList() };
+            yield return new object[] { 1, 0, new LinkedList(new int[] { 7, 5 }), new LinkedList(5) };
+            yield return new object[] { 1, 1, new LinkedList(new int[] { 7, 5 }), new LinkedList(7) };
+            yield return new object[] { 2, 0, new LinkedList(new int[] { 7, 5 }), new LinkedList() };
+            yield return new object[] { 1, 0, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 7, 9 }) };
+            yield return new object[] { 1, 1, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 2, 9 }) };
+            yield return new object[] { 1, 2, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 2, 7 }) };
+            yield return new object[] { 2, 0, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 9 }) };
+            yield return new object[] { 2, 1, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 2 }) };
+            yield return new object[] { 2, 1, new LinkedList(new int[] { 2, 7, 9, 6 }), new LinkedList(new int[] { 2, 6 }) };
+            yield return new object[] { 3, 0, new LinkedList(new int[] { 2, 7, 9 }), new LinkedList() };
+            yield return new object[] { 3, 2, new LinkedList(new int[] { 2, 7, 9, 6, 8 }), new LinkedList(new int[] { 2, 7 }) };
+            yield return new object[] { 2, 2, new LinkedList(new int[] { 2, 0, 0, 6, 8 }), new LinkedList(new int[] { 2, 0, 8 }) };
+            yield return new object[] { 2, 1, new LinkedList(new int[] { 2, 0, 0, 6, 8 }), new LinkedList(new int[] { 2, 6, 8 }) };
         }
     }
 
@@ -131,7 +131,7 @@ namespace LinkedLists.Tests
             yield return new object[] { 5, new LinkedList(5), 0 };
             yield return new object[] { 1, new LinkedList(new int[] { 7, 5 }), -1 };
             yield return new object[] { 2, new LinkedList(new int[] { 7, 2 }), 1 };
-            yield return new object[] { 2, new LinkedList(new int[] { 2, 7, 9 }), 0};
+            yield return new object[] { 2, new LinkedList(new int[] { 2, 7, 9 }), 0 };
             yield return new object[] { 9, new LinkedList(new int[] { 2, 7, 9 }), 2 };
             yield return new object[] { 6, new LinkedList(new int[] { 2, 7, 9, 6, 8 }), 3 };
             yield return new object[] { 0, new LinkedList(new int[] { 2, 0, 0, 6, 8 }), 1 };
@@ -199,7 +199,20 @@ namespace LinkedLists.Tests
     }
 
 
+    public class DeleteByValueTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { 7, 0, new LinkedList(new int[] { 7, 5 }), new LinkedList(new int[] { 5 }) };
+            yield return new object[] { 7, 0, new LinkedList(new int[] { 7 }), new LinkedList() };
+            yield return new object[] { 5, 1, new LinkedList(new int[] { 7, 5 }), new LinkedList(new int[] { 7 }) };
+            yield return new object[] { 8, 2, new LinkedList(new int[] { 2, 3, 8, 7, 5 }), new LinkedList(new int[] { 2, 3, 7, 5 }) };
+            yield return new object[] { 5, 4, new LinkedList(new int[] { 2, 3, 8, 7, 5 }), new LinkedList(new int[] { 2, 3, 8, 7 }) };
+            yield return new object[] { 2, 0, new LinkedList(new int[] { 2, 3, 8, 7, 5 }), new LinkedList(new int[] { 3, 8, 7, 5 }) };
+            yield return new object[] { 3, 1, new LinkedList(new int[] { 2, 3, 3, 8, 7, 5 }), new LinkedList(new int[] { 2, 3, 8, 7, 5 }) };
+        }
 
 
 
+    }
 }

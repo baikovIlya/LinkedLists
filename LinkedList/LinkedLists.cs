@@ -382,6 +382,42 @@ namespace Lists
 
 
 
+        public int DeleteFirstByValue(int value)
+        {
+            if (Length < 1)
+            {
+                throw new Exception("There are no items to delete");
+            }
+            int index = -1;
+            if (_root.Value == value)
+            {
+                _root = _root.Next;
+                index = 0;
+            }
+            else
+            {
+                Node crnt = _root.Next;
+
+                for (int i = 1; i < Length; i++)
+                {
+                    if (crnt.Value == value)
+                    {
+                        index = i;
+                        Node left_node = GetNode(index - 1);
+                        left_node.Next = crnt.Next;
+                        break;
+                    }
+                    crnt = crnt.Next;
+                }
+            }
+            _tail = GetTail();
+            return index;
+        }
+
+
+
+
+
         public override string ToString()
         {
             string str = "{ ";
