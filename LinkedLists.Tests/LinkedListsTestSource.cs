@@ -124,6 +124,22 @@ namespace LinkedLists.Tests
         }
     }
 
+    public class SearchIndexByValueTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { 5, new LinkedList(5), 0 };
+            yield return new object[] { 1, new LinkedList(new int[] { 7, 5 }), -1 };
+            yield return new object[] { 2, new LinkedList(new int[] { 7, 2 }), 1 };
+            yield return new object[] { 2, new LinkedList(new int[] { 2, 7, 9 }), 0};
+            yield return new object[] { 9, new LinkedList(new int[] { 2, 7, 9 }), 2 };
+            yield return new object[] { 6, new LinkedList(new int[] { 2, 7, 9, 6, 8 }), 3 };
+            yield return new object[] { 0, new LinkedList(new int[] { 2, 0, 0, 6, 8 }), 1 };
+        }
+    }
+
+
+
 
 
 

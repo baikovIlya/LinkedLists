@@ -13,3 +13,5 @@ for (int i = 0; i < lis.Length; i++)
 {
     Console.WriteLine(lis[i]);
 }
+int ind = lis2.SearchIndexByValue(0);
+Console.WriteLine(ind);

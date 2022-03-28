@@ -155,5 +155,16 @@ namespace LinkedLists.Tests
             Assert.Throws<ArgumentException>(() => list.DeleteElementsByIndex(count, index));
         }
 
+
+        [TestCaseSource(typeof(SearchIndexByValueTestSource))]
+        public void SearchindexByValueTest(int value, LinkedList list, int expected_index)
+        {
+            int actual_index = list.SearchIndexByValue(value);
+            Assert.AreEqual(expected_index, actual_index);
+        }
+
+
+
+
     }
 }

@@ -269,6 +269,24 @@ namespace Lists
             _tail = GetTail();
         }
 
+        public int SearchIndexByValue(int value)
+        {
+            int index = -1;
+            Node crnt = _root;
+            for (int i=0; i<Length; i++)
+            {
+                if(crnt.Value == value)
+                {
+                    index = i;
+                    break;
+                }
+                crnt = crnt.Next;
+            }
+            return index;
+        }
+
+
+
 
 
 
