@@ -179,6 +179,21 @@ namespace LinkedLists.Tests
         }
 
 
+        [TestCaseSource(typeof(GetMinTestSource))]
+        public void GetMinTest(LinkedList list, int expected)
+        {
+            int actual = list.GetMin();
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCaseSource(typeof(EmptyListTestSource))]
+        public void GetMinTest_WhenListIsEmpty_ShouldThrowException(LinkedList list)
+        {
+            Assert.Throws<Exception>(() => list.GetMin());
+        }
+
+
+
 
 
 

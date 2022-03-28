@@ -151,9 +151,23 @@ namespace LinkedLists.Tests
             yield return new object[] { new LinkedList(new int[] { 2, 0, 0, 6, 8 }), 8 };
         }
     }
+    public class GetMinTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { new LinkedList(5), 5 };
+            yield return new object[] { new LinkedList(new int[] { 7, 5 }), 5 };
+            yield return new object[] { new LinkedList(new int[] { 7, 2 }), 2 };
+            yield return new object[] { new LinkedList(new int[] { 2, 7, 9 }), 2 };
+            yield return new object[] { new LinkedList(new int[] { -2, -7, -9 }), -9 };
+            yield return new object[] { new LinkedList(new int[] { 2, -7, 9, 6, -8 }), -8 };
+            yield return new object[] { new LinkedList(new int[] { 2, 0, 0, 6, 8 }), 0 };
+        }
+
+    }
 
 
 
 
 
-}
+    }
