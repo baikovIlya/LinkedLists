@@ -347,6 +347,29 @@ namespace Lists
 
         }
 
+        public int GetIndexOfMin()
+        {
+            if (Length < 1)
+            {
+                throw new Exception("There are no items to search for");
+            }
+            int min = _root.Value;
+            int index = 0;
+            int index_of_min = 0;
+            Node crnt = _root;
+            while (crnt != null)
+            {
+                if (crnt.Value < min)
+                {
+                    min = crnt.Value;
+                    index_of_min = index;
+                }
+                index++;
+                crnt = crnt.Next;
+            }
+            return index_of_min;
+
+        }
 
 
 
