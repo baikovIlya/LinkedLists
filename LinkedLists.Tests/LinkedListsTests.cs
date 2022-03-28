@@ -165,6 +165,22 @@ namespace LinkedLists.Tests
 
 
 
+        [TestCaseSource(typeof(GetMaxTestSource))]
+        public void GetMaxTest(LinkedList list, int expected)
+        {
+            int actual = list.GetMax();
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCaseSource(typeof(EmptyListTestSource))]
+        public void GetMaxTest_WhenListIsEmpty_ShouldThrowException(LinkedList list)
+        {
+            Assert.Throws<Exception>(() => list.GetMax());
+        }
+
+
+
+
 
     }
 }

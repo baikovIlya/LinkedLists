@@ -285,6 +285,28 @@ namespace Lists
             return index;
         }
 
+        public int GetMax()
+        {
+            if (Length < 1)
+            {
+                throw new Exception("There are no items to search for");
+            }
+            int max = _root.Value;
+            Node crnt = _root;
+            while(crnt != null)
+            {
+                if (crnt.Value > max)
+                {
+                    max = crnt.Value;
+                }
+                crnt = crnt.Next;
+            }
+            return max;
+        }
+
+
+
+
 
 
 
