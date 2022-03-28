@@ -166,8 +166,23 @@ namespace LinkedLists.Tests
 
     }
 
-
-
-
+    public class GetIndexOfMaxTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { new LinkedList(5), 0 };
+            yield return new object[] { new LinkedList(new int[] { 7, 5 }), 0 };
+            yield return new object[] { new LinkedList(new int[] { 2, 7 }), 1 };
+            yield return new object[] { new LinkedList(new int[] { 3, 2, 9 }), 2 };
+            yield return new object[] { new LinkedList(new int[] { -2, -7, -9 }), 0 };
+            yield return new object[] { new LinkedList(new int[] { 2, -7, 9, 6, -8 }), 2 };
+            yield return new object[] { new LinkedList(new int[] { 2, 0, 0, 6, 8 }), 4 };
+            yield return new object[] { new LinkedList(new int[] { 2, 0, 0, 16, 8 }), 3 };
+        }
 
     }
+
+
+
+
+}

@@ -323,6 +323,30 @@ namespace Lists
             return min;
         }
 
+        public int GetIndexOfMax()
+        {
+            if (Length < 1)
+            {
+                throw new Exception("There are no items to search for");
+            }
+            int max = _root.Value;
+            int index = 0;
+            int index_of_max = 0;
+            Node crnt = _root;
+            while (crnt != null)
+            {
+                if (crnt.Value > max)
+                {
+                    max = crnt.Value;
+                    index_of_max = index;
+                }
+                index++;
+                crnt = crnt.Next;
+            }
+            return index_of_max;
+
+        }
+
 
 
 

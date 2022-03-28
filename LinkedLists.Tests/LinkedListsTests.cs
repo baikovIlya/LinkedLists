@@ -192,6 +192,22 @@ namespace LinkedLists.Tests
             Assert.Throws<Exception>(() => list.GetMin());
         }
 
+        [TestCaseSource(typeof(GetIndexOfMaxTestSource))]
+        public void GetIndexOfMaxTest(LinkedList list, int expected)
+        {
+            int actual = list.GetIndexOfMax();
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCaseSource(typeof(EmptyListTestSource))]
+        public void GetIndexOfMaxTest_WhenListIsEmpty_ShouldThrowException(LinkedList list)
+        {
+            Assert.Throws<Exception>(() => list.GetIndexOfMax());
+        }
+
+
+
+
 
 
 
