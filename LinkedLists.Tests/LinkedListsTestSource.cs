@@ -198,6 +198,17 @@ namespace LinkedLists.Tests
 
     }
 
+    public class SortAscendingTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { new LinkedList(), new LinkedList() };
+            yield return new object[] { new LinkedList(5), new LinkedList(5) };
+            yield return new object[] { new LinkedList(new int[] { 5, 2, 1 }), new LinkedList(new int[] { 1, 2, 5 }) };
+            yield return new object[] { new LinkedList(new int[] { 5, 1, 1 }), new LinkedList(new int[] { 1, 1, 5 }) };
+            yield return new object[] { new LinkedList(new int[] { 1, 2, 3 }), new LinkedList(new int[] { 1, 2, 3 }) };
+        }
+    }
 
     public class DeleteByValueTestSource : IEnumerable
     {

@@ -371,6 +371,46 @@ namespace Lists
 
         }
 
+        public void SortAscending()
+        {
+            if (Length > 1)
+            {
+                int l = Length;
+                Node crnt;
+                Node prev;
+
+                for (int i = l - 2; i >= 0; i--)
+                {
+                    if (i == 0)
+                    {
+                        crnt = _root;
+                        if (crnt.Next != null && crnt.Value > crnt.Next.Value)
+                        {
+                            _root = crnt.Next;
+                            crnt.Next = _root.Next;
+                            _root.Next = crnt;
+                        }
+                        prev = _root;
+                    }
+                    else
+                    {
+                        prev = GetNode(i - 1);
+                        crnt = prev.Next;
+                    }
+
+                    while (crnt.Next != null && crnt.Value > crnt.Next.Value)
+                    {
+                        prev.Next = crnt.Next;
+                        crnt.Next = prev.Next.Next;
+                        prev.Next.Next = crnt;
+
+                        prev = prev.Next;
+                    }
+                }
+
+                _tail = GetTail();
+            }
+        }
 
 
 

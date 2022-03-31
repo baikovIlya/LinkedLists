@@ -218,6 +218,13 @@ namespace LinkedLists.Tests
             Assert.Throws<Exception>(() => list.GetIndexOfMin());
         }
 
+        [TestCaseSource(typeof(SortAscendingTestSource))]
+        public void SortAscendingTest(LinkedList list, LinkedList expected_list)
+        {
+            list.SortAscending();
+            Assert.AreEqual(expected_list, list);
+        }
+
 
         [TestCaseSource(typeof(DeleteByValueTestSource))]
         public void DeleteByValueTest(int value, int expected_index, LinkedList list, LinkedList expected_list)
@@ -276,6 +283,10 @@ namespace LinkedLists.Tests
         {
             Assert.Throws<ArgumentException>(() => list.AddListByIndex(index, add_list));
         }
+
+
+
+
 
 
 
