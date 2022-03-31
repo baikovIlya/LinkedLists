@@ -472,7 +472,29 @@ namespace Lists
             }
         }
 
-
+        public void AddListByIndex(int index, LinkedList add_list)
+        {
+            if (index < 0 || index > Length)
+            {
+                throw new ArgumentException("This index doesn't exist");
+            }
+            if (this._root == null && index == 0)
+            {
+                this._root = add_list._root;
+            }
+            else if (index == 0)
+            {
+                this.AddListAtBegin(add_list);
+            }
+            else if (add_list._root != null)
+            {
+                Node left = GetNode(index-1);
+                Node right = GetNode(index);
+                left.Next = add_list._root;
+                add_list._tail=add_list.GetTail();
+                add_list._tail.Next = right;
+            }
+        }
 
 
 
