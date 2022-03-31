@@ -164,6 +164,13 @@ namespace LinkedLists.Tests
         }
 
 
+        [TestCaseSource(typeof(ReverseTestSource))]
+        public void ReverseTest(LinkedList list, LinkedList expected_list)
+        {
+            list.Reverse();
+            Assert.AreEqual(expected_list, list);
+        }
+
 
         [TestCaseSource(typeof(GetMaxTestSource))]
         public void GetMaxTest(LinkedList list, int expected)
@@ -192,6 +199,7 @@ namespace LinkedLists.Tests
             Assert.Throws<Exception>(() => list.GetMin());
         }
 
+
         [TestCaseSource(typeof(GetIndexOfMaxTestSource))]
         public void GetIndexOfMaxTest(LinkedList list, int expected)
         {
@@ -205,6 +213,7 @@ namespace LinkedLists.Tests
             Assert.Throws<Exception>(() => list.GetIndexOfMax());
         }
 
+
         [TestCaseSource(typeof(GetIndexOfMinTestSource))]
         public void GetIndexOfMinTest(LinkedList list, int expected)
         {
@@ -217,6 +226,7 @@ namespace LinkedLists.Tests
         {
             Assert.Throws<Exception>(() => list.GetIndexOfMin());
         }
+
 
         [TestCaseSource(typeof(SortAscendingTestSource))]
         public void SortAscendingTest(LinkedList list, LinkedList expected_list)

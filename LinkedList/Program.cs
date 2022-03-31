@@ -16,7 +16,7 @@ LinkedList lis2 = new LinkedList(new int[] {4,4,4});
 //int ind = lis2.SearchIndexByValue(0);
 //Console.WriteLine(ind);
 //lis.AddListAtBegin(lis2);
-lis.SortAscending();
+lis.SortDescending();
 for (int i = 0; i < lis.Length; i++)
 {
     Console.WriteLine(lis[i]);

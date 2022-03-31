@@ -138,6 +138,17 @@ namespace LinkedLists.Tests
         }
     }
 
+    public class ReverseTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { new LinkedList(), new LinkedList()};
+            yield return new object[] { new LinkedList(5), new LinkedList(5)};
+            yield return new object[] { new LinkedList(new int[] { 5, 8, 7 }), new LinkedList(new int[] { 7, 8, 5 }) };
+            yield return new object[] { new LinkedList(new int[] { 5, 8, 7, 6 }), new LinkedList(new int[] { 6, 7, 8, 5 }) };
+        }
+    }
+
     public class GetMaxTestSource : IEnumerable
     {
         public IEnumerator GetEnumerator()

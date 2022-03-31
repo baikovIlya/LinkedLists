@@ -285,6 +285,22 @@ namespace Lists
             return index;
         }
 
+        public void Reverse()
+        {
+            if (Length > 1)
+            {
+                Node crnt = _root;
+                Node rev;
+                while (crnt.Next != null)
+                {
+                    rev = crnt.Next;
+                    crnt.Next = rev.Next;
+                    rev.Next = _root;
+                    _root = rev;
+                }
+            }
+        }
+
         public int GetMax()
         {
             if (Length < 1)
@@ -410,6 +426,12 @@ namespace Lists
 
                 _tail = GetTail();
             }
+        }
+
+        public void SortDescending()
+        {
+            this.SortAscending();
+            this.Reverse();
         }
 
 
