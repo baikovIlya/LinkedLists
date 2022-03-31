@@ -41,6 +41,7 @@ namespace LinkedLists.Tests
             yield return new object[] { 9, 1, new LinkedList(new int[] { 7, 7 }), new LinkedList(new int[] { 7, 9, 7 }) };
         }
     }
+
     public class DeleteLastTestSource : IEnumerable
     {
         public IEnumerator GetEnumerator()
@@ -162,6 +163,7 @@ namespace LinkedLists.Tests
             yield return new object[] { new LinkedList(new int[] { 2, 0, 0, 6, 8 }), 8 };
         }
     }
+
     public class GetMinTestSource : IEnumerable
     {
         public IEnumerator GetEnumerator()
@@ -221,6 +223,18 @@ namespace LinkedLists.Tests
         }
     }
 
+    public class SortDescendingTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { new LinkedList(), new LinkedList() };
+            yield return new object[] { new LinkedList(5), new LinkedList(5) };
+            yield return new object[] { new LinkedList(new int[] { 5, 2, 1 }), new LinkedList(new int[] { 5, 2, 1 }) };
+            yield return new object[] { new LinkedList(new int[] { 5, 5, 8 }), new LinkedList(new int[] { 8, 5, 5 }) };
+            yield return new object[] { new LinkedList(new int[] { 1, 2, 3 }), new LinkedList(new int[] { 3, 2, 1 }) };
+        }
+    }
+
     public class DeleteByValueTestSource : IEnumerable
     {
         public IEnumerator GetEnumerator()
@@ -234,6 +248,7 @@ namespace LinkedLists.Tests
             yield return new object[] { 3, 1, new LinkedList(new int[] { 2, 3, 3, 8, 7, 5 }), new LinkedList(new int[] { 2, 3, 8, 7, 5 }) };
         }
     }
+
     public class DeleteAllByValueTestSource : IEnumerable
     {
         public IEnumerator GetEnumerator()
@@ -301,11 +316,5 @@ namespace LinkedLists.Tests
 
         }
     }
-
-
-
-
-
-
 
 }

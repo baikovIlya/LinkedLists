@@ -106,8 +106,6 @@ namespace LinkedLists.Tests
         }
 
 
-
-
         [TestCaseSource(typeof(DeleteElementsAtBeginTestSource))]
         public void DeleteElementsAtBeginTest(int count, LinkedList list, LinkedList expected_list)
         {
@@ -126,8 +124,6 @@ namespace LinkedLists.Tests
         {
             Assert.Throws<ArgumentException>(() => list.DeleteElementsAtTheEnd(count));
         }
-
-
 
 
         [TestCaseSource(typeof(DeleteElementsByIndexTestSource))]
@@ -157,7 +153,7 @@ namespace LinkedLists.Tests
 
 
         [TestCaseSource(typeof(SearchIndexByValueTestSource))]
-        public void SearchindexByValueTest(int value, LinkedList list, int expected_index)
+        public void SearchIndexByValueTest(int value, LinkedList list, int expected_index)
         {
             int actual_index = list.SearchIndexByValue(value);
             Assert.AreEqual(expected_index, actual_index);
@@ -236,6 +232,14 @@ namespace LinkedLists.Tests
         }
 
 
+        [TestCaseSource(typeof(SortDescendingTestSource))]
+        public void SortDescendingTest(LinkedList list, LinkedList expected_list)
+        {
+            list.SortDescending();
+            Assert.AreEqual(expected_list, list);
+        }
+
+
         [TestCaseSource(typeof(DeleteByValueTestSource))]
         public void DeleteByValueTest(int value, int expected_index, LinkedList list, LinkedList expected_list)
         {
@@ -249,6 +253,7 @@ namespace LinkedLists.Tests
         {
             Assert.Throws<Exception>(() => list.DeleteFirstByValue(value));
         }
+
 
         [TestCaseSource(typeof(DeleteAllByValueTestSource))]
         public void DeleteAllByValueTest(int value, int expected_count, LinkedList list, LinkedList expected_list)
@@ -265,8 +270,6 @@ namespace LinkedLists.Tests
         }
 
 
-
-
         [TestCaseSource(typeof(AddListTestSource))]
         public void AddListTest(LinkedList list, LinkedList add_list, LinkedList expected_list)
         {
@@ -274,12 +277,14 @@ namespace LinkedLists.Tests
             Assert.AreEqual(expected_list, list);
         }
 
+
         [TestCaseSource(typeof(AddListAtBeginTestSource))]
         public void AddListAtBeginTest(LinkedList list, LinkedList add_list, LinkedList expected_list)
         {
             list.AddListAtBegin(add_list);
             Assert.AreEqual(expected_list, list);
         }
+
 
         [TestCaseSource(typeof(AddListByIndexTestSource))]
         public void AddListByIndexTest(int index, LinkedList list, LinkedList add_list, LinkedList expected_list)
@@ -293,14 +298,6 @@ namespace LinkedLists.Tests
         {
             Assert.Throws<ArgumentException>(() => list.AddListByIndex(index, add_list));
         }
-
-
-
-
-
-
-
-
 
     }
 }

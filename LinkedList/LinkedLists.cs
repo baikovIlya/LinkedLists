@@ -97,6 +97,8 @@ namespace Lists
             }
         }
 
+
+
         public void Add(int value)
         {
             if (_root == null)
@@ -126,6 +128,7 @@ namespace Lists
                 _root.Next = crnt;
             }
         }
+
         public void AddByIndex(int value, int index)
         {
             if (index < 0 || index >= Length+1)
@@ -434,16 +437,6 @@ namespace Lists
             this.Reverse();
         }
 
-
-
-
-
-
-
-
-
-
-
         public int DeleteFirstByValue(int value)
         {
             if (Length < 1)
@@ -559,14 +552,6 @@ namespace Lists
         }
 
 
-
-
-
-
-
-
-
-
         public override string ToString()
         {
             string str = "{ ";
@@ -618,7 +603,6 @@ namespace Lists
                 crnt = crnt.Next;
             }
             return crnt;
-
         }
         private Node GetNode(int index)
         {
