@@ -88,5 +88,20 @@ namespace LinkedLists.Tests
         }
     }
 
+    public class AddListByIndexWrongIndexTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { -1, new LinkedList(6), new LinkedList() };
+            yield return new object[] {  5, new LinkedList(6), new LinkedList() };
+            yield return new object[] {  2, new LinkedList(6), new LinkedList() };
+        }
+    }
+
+
+
+
+
+
 
 }

@@ -271,6 +271,12 @@ namespace LinkedLists.Tests
             Assert.AreEqual(expected_list, list);
         }
 
+        [TestCaseSource(typeof(AddListByIndexWrongIndexTestSource))]
+        public void AddListByIndexTest_WhenIndexIsWrong_ShouldThrowArgumentException(int index, LinkedList list, LinkedList add_list)
+        {
+            Assert.Throws<ArgumentException>(() => list.AddListByIndex(index, add_list));
+        }
+
 
 
 
