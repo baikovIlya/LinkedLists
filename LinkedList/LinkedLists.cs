@@ -448,6 +448,37 @@ namespace Lists
             return result;
         }
 
+        public void AddList(LinkedList second_list)
+        {
+            if (_root == null)
+            {
+                this._root = second_list._root;
+            }
+            else
+            {
+                _tail = GetTail();
+                _tail.Next = second_list._root;
+                _tail = GetTail();
+            }
+        }
+
+        public void AddListAtBegin(LinkedList add_list)
+        {
+            if (add_list._root != null)
+            {
+                Node tmp = this._root;
+                add_list._tail.Next = tmp;
+                this._root = add_list._root;
+            }
+        }
+
+
+
+
+
+
+
+
 
 
 
@@ -498,7 +529,7 @@ namespace Lists
         private Node GetTail()
         {
             Node crnt = _root;
-            for (int i = 1; i <= this.Length; i++)
+            for (int i = 1; i < this.Length; i++)
             {
                 crnt = crnt.Next;
             }

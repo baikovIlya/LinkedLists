@@ -250,6 +250,20 @@ namespace LinkedLists.Tests
 
 
 
+        [TestCaseSource(typeof(AddListTestSource))]
+        public void AddListTest(LinkedList list, LinkedList add_list, LinkedList expected_list)
+        {
+            list.AddList(add_list);
+            Assert.AreEqual(list, expected_list);
+        }
+
+        [TestCaseSource(typeof(AddListAtBeginTestSource))]
+        public void AddListAtBeginTest(LinkedList list, LinkedList add_list, LinkedList expected_list)
+        {
+            list.AddListAtBegin(add_list);
+            Assert.AreEqual(list, expected_list);
+        }
+
 
 
 

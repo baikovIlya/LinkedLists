@@ -229,8 +229,43 @@ namespace LinkedLists.Tests
             yield return new object[] { 3, 3, new LinkedList(new int[] { 3, 3, 2, 3, 2, 2 }), new LinkedList(new int[] { 2, 2, 2 }) };
             yield return new object[] { 8, 2, new LinkedList(new int[] { 8, 3, 2, 2, 8 }), new LinkedList(new int[] { 3, 2, 2 }) };
         }
-
-
-
     }
+
+    public class AddListTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 2, 9 }),new LinkedList(new int[] { 2, 7, 9, 2, 9 }) };
+            yield return new object[] { new LinkedList(new int[] { 2 }), new LinkedList(new int[] { 2, 9 }),new LinkedList(new int[] { 2, 2, 9 }) };
+            yield return new object[] { new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 9 }),new LinkedList(new int[] { 2, 7, 9, 9 }) };
+            yield return new object[] { new LinkedList(new int[] { 2 }), new LinkedList(new int[] { 2 }),new LinkedList(new int[] { 2, 2 }) };
+            yield return new object[] { new LinkedList(new int[] { }), new LinkedList(new int[] { 2, 9 }),new LinkedList(new int[] { 2, 9 }) };
+            yield return new object[] { new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { }),new LinkedList(new int[] { 2, 7, 9 }) };
+            yield return new object[] { new LinkedList(), new LinkedList(),new LinkedList() };
+
+        }
+    }
+
+    public class AddListAtBeginTestSource : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 2, 9 }), new LinkedList(new int[] { 2, 9, 2, 7, 9 }) };
+            yield return new object[] { new LinkedList(new int[] { 2 }), new LinkedList(new int[] { 2, 9 }), new LinkedList(new int[] { 2, 9, 2 }) };
+            yield return new object[] { new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { 9 }), new LinkedList(new int[] { 9, 2, 7, 9 }) };
+            yield return new object[] { new LinkedList(new int[] { 2 }), new LinkedList(new int[] { 2 }), new LinkedList(new int[] { 2, 2 }) };
+            yield return new object[] { new LinkedList(new int[] { }), new LinkedList(new int[] { 2, 9 }), new LinkedList(new int[] { 2, 9 }) };
+            yield return new object[] { new LinkedList(new int[] { 2, 7, 9 }), new LinkedList(new int[] { }), new LinkedList(new int[] { 2, 7, 9 }) };
+            yield return new object[] { new LinkedList(), new LinkedList(), new LinkedList() };
+
+        }
+    }
+
+
+
+
+
+
+
+
 }
